@@ -44,7 +44,10 @@ class BracketValidator extends Component {
             value={this.state.code}
             onChange={this.handleCodeChange}
           />
-          <HelpBlock>{this.state.bracketError}</HelpBlock>
+          {this.state.bracketError
+            ? <HelpBlock>{this.state.bracketError}</HelpBlock>
+            : <HelpBlock>All is balanced.</HelpBlock>
+          }
         </FormGroup>
       </form>
     );
